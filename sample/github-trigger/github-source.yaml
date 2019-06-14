@@ -1,0 +1,21 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: GitHubSource
+metadata:
+  name: wordpress-github-sources
+spec:
+  eventTypes:
+  - pull_request
+  ownerAndRepository: knative-sample/wordpress
+  accessToken:
+    secretKeyRef:
+      name: githubsecret
+      key: accessToken
+  secretToken:
+    secretKeyRef:
+      name: githubsecret
+      key: secretToken
+  sink:
+    apiVersion: serving.knative.dev/v1alpha1
+    kind: Service
+    name: wordpress-github-trigger
+

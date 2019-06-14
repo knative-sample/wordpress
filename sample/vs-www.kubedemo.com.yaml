@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: route-kubedemo
+  namespace: knative-serving
+spec:
+  gateways:
+  - knative-ingress-gateway
+  hosts:
+  - kubedemo.com
+  - www.kubedemo.com
+  http:
+  - appendHeaders:
+      knative-serving-namespace: default
+      knative-serving-revision: wordpress-serving-fxv8p
+    retries:
+      attempts: 3
+      perTryTimeout: 10m0s
+    route:
+    - destination:
+        host: wordpress-serving-fxv8p.default.svc.cluster.local
+        port:
+          number: 80
+      weight: 100
+    timeout: 10m0s
+    websocketUpgrade: true

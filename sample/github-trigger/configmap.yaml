@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: trigger-config
+  namespace: default
+data:
+  "cicd-trigger.yaml": |-
+    apiVersion: build.knative.dev/v1alpha1
+    kind: Build
+    metadata:
+      name: build-wordpress
+    spec:
+      serviceAccountName: build-bot
+      source:
+        git:
+          url: https://github.com/knative-sample/wordpress.git
+          revision: master
+      steps:
+      - name: build-and-push
+        image: "registry.cn-hangzhou.aliyuncs.com/knative-release/kaniko-project-executor:v0.6.0"
+        args:
+        - "--dockerfile=/workspace/hack/Dockerfile"
+        - "--destination=registry.cn-hangzhou.aliyuncs.com/knative-sample/wordpress:{{.ShortCommitid}}"
+        env:
+        - name: DOCKER_CONFIG
+          value: /builder/home/.docker
+      - name: release-service
+        image: "registry.cn-hangzhou.aliyuncs.com/knative-sample/deployer:master_aaac0255-20190606135828"
+        args:
+        - "--namespace=default"
+        - "--serivce-name=wordpress"
+        - "--image=registry.cn-hangzhou.aliyuncs.com/knative-sample/wordpress:{{.ShortCommitid}}"

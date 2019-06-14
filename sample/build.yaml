@@ -1,0 +1,21 @@
+---
+apiVersion: build.knative.dev/v1alpha1
+kind: Build
+metadata:
+  name: build-wordpress
+spec:
+  serviceAccountName: build-bot
+  source:
+    git:
+      url: https://github.com/knative-sample/wordpress.git
+      revision: master
+  steps:
+  - name: build-and-push
+    image: "registry.cn-hangzhou.aliyuncs.com/knative-release/kaniko-project-executor:v0.6.0"
+    args:
+    - "--dockerfile=/workspace/hack/Dockerfile"
+    # Replace meteatamel with your actual DockerHub
+    - "--destination=registry.cn-hangzhou.aliyuncs.com/knative-sample/wordpress:5.2.1-0613"
+    env:
+    - name: DOCKER_CONFIG
+      value: /builder/home/.docker

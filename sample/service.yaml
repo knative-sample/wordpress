@@ -1,0 +1,28 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: wordpress
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: wordpress
+      annotations:
+        autoscaling.knative.dev/target: "10"
+    spec:
+      containers:
+        - image: registry.cn-hangzhou.aliyuncs.com/knative-sample/wordpress:ce5a7532
+          ports:
+            - name: http1
+              containerPort: 80
+          env:
+          - name: WORDPRESS_DB_HOST
+            value: {db_host:3306}
+          - name: WORDPRESS_DB_NAME
+            value: {db_name}
+          - name: WORDPRESS_DB_USER
+            value: {db_user}
+          - name: WORDPRESS_DB_PASSWORD
+            value: {db_password}
+          imagePullPolicy: Always
