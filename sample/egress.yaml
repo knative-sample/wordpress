@@ -27,10 +27,11 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
-  name: aliyuncs-tls-ext
+  name: aliyun-tls-ext
 spec:
   hosts:
   - "*.aliyuncs.com"
+  - "*.aliyun.com"
   ports:
   - number: 443
     name: tls
@@ -40,10 +41,11 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
-  name: aliyuncs-http-ext
+  name: aliyun-http-ext
 spec:
   hosts:
   - "*.aliyuncs.com"
+  - "*.aliyun.com"
   ports:
   - number: 80
     name: http
