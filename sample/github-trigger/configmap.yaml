@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: trigger-config
+  name: wordpress-trigger-config
   namespace: default
 data:
   "cicd-trigger.yaml": |-
