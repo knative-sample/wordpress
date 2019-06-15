@@ -9,6 +9,7 @@ spec:
       labels:
         app: wordpress
       annotations:
+        autoscaling.knative.dev/maxScale: "20"
         autoscaling.knative.dev/target: "10"
     spec:
       containers:
