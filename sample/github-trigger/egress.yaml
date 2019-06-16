@@ -1,0 +1,71 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: github-http-ext
+spec:
+  hosts:
+  - "*.github.com"
+  ports:
+  - number: 80
+    name: http
+    protocol: HTTP
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: github-tls-ext
+spec:
+  hosts:
+  - "*.github.com"
+  ports:
+  - number: 443
+    name: tls
+    protocol: TLS
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: aliyun-tls-ext
+spec:
+  hosts:
+  - "*.aliyuncs.com"
+  - "*.aliyun.com"
+  ports:
+  - number: 443
+    name: tls
+    protocol: TLS
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: aliyun-http-ext
+spec:
+  hosts:
+  - "*.aliyuncs.com"
+  - "*.aliyun.com"
+  ports:
+  - number: 80
+    name: http
+    protocol: HTTP
+
+--- 
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: rds-entry
+spec: 
+  hosts:
+  - "*.aliyuncs.com"
+  addresses:
+  - "192.168.0.0/16"
+  - "172.16.0.0/12"
+  - "10.0.0.0/8"
+  - 39.96.104.84
+  ports:
+  - number: 3306
+    name: rds
+    protocol: TCP
+
