@@ -1,0 +1,183 @@
+/*
+0. General Styling
+1. Upgrade Now - Sub-Section
+2. Width Changes
+3. Misc
+*/
+
+/* ----------------------------------------------------------------------------------------------------------
+	0. GENERAL STYLING
+---------------------------------------------------------------------------------------------------------- */
+
+/* Ensure upgrade tab always shows */
+body.wp-customizer [id*="upeo_customizer_section_upgrade_inner"] {
+	display: block !important;
+}
+body.wp-customizer #accordion-section-themes .accordion-section-title {
+	background: #fff !important;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------
+	1. UPGRADE NOW - SUB-SECTION
+---------------------------------------------------------------------------------------------------------- */
+
+/* Change "Upgrade (10% off)" tab hover color */
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section > h3.accordion-section-title,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section:hover > h3.accordion-section-title,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section h3.accordion-section-title:hover,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section.open h3.accordion-section-title,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section h3.accordion-section-title:focus,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel:hover > h3.accordion-section-title,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel h3.accordion-section-title:hover,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel.open h3.accordion-section-title,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel h3.accordion-section-title:focus {
+    color: #fff !important;
+    background: #0067CE !important;
+    border-color: #0067CE !important;
+}
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section > h3.accordion-section-title:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section:hover > h3.accordion-section-title:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section h3.accordion-section-title:hover:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section.open h3.accordion-section-title:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-section h3.accordion-section-title:focus:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel:hover > h3.accordion-section-title:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel h3.accordion-section-title:hover:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel.open h3.accordion-section-title:after,
+#customize-theme-controls [id*="upeo_customizer_section_upgrade_inner"].control-panel h3.accordion-section-title:focus:after {
+    color: #fff !important;
+}
+
+/* Remove "Customizing" text from upgrade tab */
+[id*="upeo_customizer_section_upgrade_inner"] .customize-section-title h3 span {
+	display: none !important;
+}
+[id*="upeo_customizer_section_upgrade_inner"] .customize-section-title h3 {
+    line-height: 54px !important;
+    height: 54px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Promotional table */
+#promotion-table {
+	background: #fff;
+	margin-bottom: 40px;
+	border: 1px solid #EEE;
+	padding: 25px 10px;
+	-webkit-box-shadow: 1px 1px 0px 2px #E0E0E0;
+	-moz-box-shadow: 1px 1px 0px 2px #E0E0E0;
+	-ms-box-shadow: 1px 1px 0px 2px #E0E0E0;
+	-o-box-shadow: 1px 1px 0px 2px #E0E0E0;
+	box-shadow: 1px 1px 0px 2px #E0E0E0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#promotion-header {
+	margin-bottom: 25px;
+}
+#promotion-header,
+#promotion-coupon {
+}
+#promotion-header .secondary-title {
+	margin-bottom: 0;
+}
+
+/* Upgrade button and coupon section */
+#upeo-promotion-field-header {
+	margin-bottom: 40px;
+}
+#upeo-promotion-field-header .main-title {
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0 0 20px;
+	line-height: 1;
+	text-align: center;
+}
+#upeo-promotion-field-header .secondary-title {
+	text-align: center;
+	font-size: 16px;
+}
+#upeo-promotion-field-header,
+.upeo-promotion-field-item {
+	max-width: 400px;
+}
+
+/* Upgrade Now button */
+.promotion-button {
+	display: block;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+	width: 190px;
+	margin: 0 auto;
+	background-color: #0067CE;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #0F5399;
+	border-bottom-width: 3px;
+	text-decoration: none;
+}
+.promotion-button:hover,
+.promotion-button:focus,
+.promotion-button:active {
+	color: white;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.promotion-button:active {
+	border-width: 3px 1px 1px 1px;
+}
+
+/* Coupon styling */
+#promotion-coupon a {
+	background: #F3F3F3;
+	font-size: 30px;
+	margin-bottom: 20px;
+	line-height: 1;
+	color: inherit;
+	text-decoration: none;
+	width: 250px;
+	padding: 10px 10px 15px;
+	text-align: center;
+	border: 3px dashed #CCC;
+	margin: 0 auto 0;
+	display: block;
+}
+#promotion-coupon span {
+	font-size: 12px;
+	display: block;
+	margin-top: 15px;
+}
+
+/* Align upgrade images */
+.upeo-promotion-field-item {
+}
+.upeo-promotion-field-item img {
+	max-width: 100%;
+	border: 1px solid #eee;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------
+	2. WIDTH CHANGES
+---------------------------------------------------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------------------------------------------
+	3. MISC
+---------------------------------------------------------------------------------------------------------- */
+
+.clearboth {
+	width: 100%;
+	clear: both;
+	display: block;
+}
