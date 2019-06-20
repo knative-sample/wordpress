@@ -1,0 +1,64 @@
+/*
+0. General Styling
+1. Upgrade Now Button
+*/
+
+/* ----------------------------------------------------------------------------------------------------------
+	0. GENERAL STYLING
+---------------------------------------------------------------------------------------------------------- */
+
+[class*="control-section-upeo-button-link"] .accordion-section-title:hover,
+[class*="control-section-upeo-button-link"] .accordion-section-title:focus {
+	background-color: #fff !important;
+}
+[class*="control-section-upeo-button-link"] .accordion-section-title .button {
+	font-weight: 400 !important;
+	margin-top: -4px !important;
+	margin-left: 8px !important;
+}
+.rtl [class*="control-section-upeo-button-link"] .accordion-section-title .button {
+	margin-left:  0 !important;
+	margin-right: 8px !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------------
+	1. UPGRADE NOW BUTTON
+---------------------------------------------------------------------------------------------------------- */
+
+[id*="upeo_customizer_section_upgrade_top"][class*="control-section-upeo-button-link"] .accordion-section-title,
+[id*="upeo_customizer_section_upgrade_top"][class*="control-section-upeo-button-link"] .accordion-section-title:hover,
+[id*="upeo_customizer_section_upgrade_top"][class*="control-section-upeo-button-link"] .accordion-section-title:focus {
+	position: relative !important;
+	display: block !important;
+	height: 62px !important;
+	color: #f3f3f3 !important;
+	font-weight: 600 !important;
+	text-align: center !important;
+	background: #f3f3f3 !important;
+	background-color: #f3f3f3 !important;
+	border-left: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	-ms-box-sizing: border-box !important;
+	-o-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+[id*="upeo_customizer_section_upgrade_top"][class*="control-section-upeo-button-link"] .button {
+	float: none !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	display: block !important;
+	font-weight: 600 !important;
+	text-transform: uppercase !important;
+	width: 150px !important;
+	max-width: 150px !important;
+	height: 40px !important;
+	line-height: 40px !important;
+	margin: auto !important;
+	padding: 0 !important;
+}
